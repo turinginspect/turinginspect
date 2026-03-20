@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Inspect | Zero-Shot AI Machine Vision</title>
+    <meta name="description" content="Deploy Zero-Shot Machine Vision in Minutes. The $5,000 industrial smart camera powered by Vision-Language Models running on edge GPUs.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-accent">TURING</span> INSPECT
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#comparison">Why Us</a>
+                <a href="#specs">Specs</a>
+            </div>
+            <a href="#preorder" class="btn btn-outline nav-cta">Talk to an Engineer</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-blur"></div>
+        <div class="container hero-content">
+            <div class="badge fade-up">VLM-POWERED AT THE EDGE</div>
+            <h1 class="hero-title fade-up delay-1">Deploy Zero-Shot Machine Vision in <span class="text-gradient">Minutes, Not Months</span>.</h1>
+            <p class="hero-subtitle fade-up delay-2">
+                The world's first $5,000 industrial smart camera powered by Vision-Language Models running on edge GPUs. No training data. No $30k integration costs. Just type what you want to inspect in plain English.
+            </p>
+            <div class="hero-actions fade-up delay-3">
+                <a href="#preorder" class="btn btn-primary glow-effect">Pre-Order Q3 Unit</a>
+                <a href="#how-it-works" class="btn btn-secondary">Watch Demo</a>
+            </div>
+            
+            <!-- Hero Graphic (Mock hardware or scanning effect) -->
+            <div class="hero-graphic fade-up delay-4">
+                <div class="camera-lens">
+                    <div class="lens-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo / How it works Section -->
+    <section class="demo-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Converse with your physical reality.</h2>
+                <p>Stop fighting brittle logic and 10,000+ image datasets. Describe the defect in plain English across any production line.</p>
+            </div>
+
+            <div class="demo-ui fade-up">
+                <!-- UI Header -->
+                <div class="demo-ui-header">
+                    <div class="window-controls">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="window-title">Turing Console // Station 4</div>
+                </div>
+                
+                <div class="demo-body">
+                    <!-- Left: Camera Feed Mock -->
+                    <div class="camera-feed-container">
+                        <div class="camera-feed">
+                            <div class="scanline"></div>
+                            <!-- Mocking a part of a PCB/Machined part with CSS -->
+                            <div class="mock-part">
+                                <div class="component c1"></div>
+                                <div class="component c2"></div>
+                                <!-- The missing screw spot -->
+                                <div class="component c3 missing" id="inspect-target"></div>
+                            </div>
+                            <div class="bounding-box" id="bounding-box">
+                                <span>MISSING: RED SCREW</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Prompt CLI -->
+                    <div class="cli-container">
+                        <div class="cli-output" id="cli-output">
+                            <span class="system-msg">System initialized. Edge GPU (NVIDIA Orin NX) active.</span><br>
+                            <span class="system-msg">Camera: 12MP Global Shutter - Online.</span><br>
+                        </div>
+                        <div class="cli-input-line">
+                            <span class="prompt-char">&gt;</span>
+                            <span class="typing-text" id="typewriter"></span><span class="cursor">|</span>
+                        </div>
+                        <div class="status-panel mt-4 hidden" id="status-panel">
+                            <div class="status-indicator reject">INSPECTION FAILED (2.7s)</div>
+                            <div class="status-details">
+                                <p>Reason: Target "red screw" not detected at location (452, 110).</p>
+                                <p>Confidence: 99.8%</p>
+                                <p>I/O Trigger: PIN_4 (EJECT) set HIGH.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>The Old Way vs. The Zero-Shot Way</h2>
+                <p>Traditional vision systems are gatekept by integrators and data requirements.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Traditional -->
+                <div class="compare-card traditional fade-up delay-1">
+                    <h3>Legacy Systems</h3>
+                    <div class="vendor-sub">e.g., Cognex, Keyence</div>
+                    
+                    <ul class="compare-list">
+                        <li><span class="icon cross">×</span> <strong>Cost:</strong> $30,000+ per line (HW + Integration)</li>
+                        <li><span class="icon cross">×</span> <strong>Training Data:</strong> 1,000s of labeled anomaly images</li>
+                        <li><span class="icon cross">×</span> <strong>Logic:</strong> Fragile rule-based configurations</li>
+                        <li><span class="icon cross">×</span> <strong>Time to Deploy:</strong> Weeks to Months</li>
+                        <li><span class="icon cross">×</span> <strong>Flexibility:</strong> Zero. New product = New models.</li>
+                    </ul>
+                </div>
+
+                <!-- Turing -->
+                <div class="compare-card turing fade-up delay-2">
+                    <div class="turing-glow"></div>
+                    <h3>Turing Inspect</h3>
+                    <div class="vendor-sub turing-sub">Vision-Language Models at the Edge</div>
+                    
+                    <ul class="compare-list">
+                        <li><span class="icon check">✓</span> <strong>Cost:</strong> $5,000 Flat. No integrator tax.</li>
+                        <li><span class="icon check">✓</span> <strong>Training Data:</strong> 0. Zero-shot out of the box.</li>
+                        <li><span class="icon check">✓</span> <strong>Logic:</strong> Plain English prompts.</li>
+                        <li><span class="icon check">✓</span> <strong>Time to Deploy:</strong> 5 Minutes.</li>
+                        <li><span class="icon check">✓</span> <strong>Flexibility:</strong> Infinite. Just change the prompt.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Specs Section -->
+    <section class="specs-section" id="specs">
+        <div class="container">
+            <div class="specs-layout">
+                <div class="specs-text fade-up">
+                    <div class="badge">HARDCORE ENGINEERING</div>
+                    <h2>Built for the Factory Floor.</h2>
+                    <p>We packed massive computational power into an uncompromising industrial chassis. Waterproof, dustproof, and runs massive VLMs entirely offline.</p>
+                </div>
+                
+                <div class="specs-grid fade-up delay-1">
+                    <div class="spec-item">
+                        <span class="spec-label">COMPUTE / ARCHITECTURE</span>
+                        <div class="spec-value">Cloud-Edge VLM Architecture</div>
+                        <div class="spec-detail">NVIDIA Jetson Orin Nano handles high-speed image pre-processing and 24V PLC I/O, while secure Cloud VLMs perform zero-shot reasoning.</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">SENSOR & OPTICS</span>
+                        <div class="spec-value">5MP Global Shutter + CS Optics</div>
+                        <div class="spec-detail">Equipped with industrial 3.6-10mm varifocal lens and custom 24V COB diffused ring light for shadowless precision.</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">LATENCY</span>
+                        <div class="spec-value">~2.7s Cognitive Cycle</div>
+                        <div class="spec-detail">Perfect for High-Mix Low-Volume (HMLV) manual assembly stations. Matches human inspection speed, but never blinks and never gets tired.</div>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">ENCLOSURE & I/O</span>
+                        <div class="spec-value">Heavy-Duty & PLC Ready</div>
+                        <div class="spec-detail">Industrial PETG exoskeleton. Powered by standard 24V DC with optically isolated I/O and M12 aviation connectors. Pelican™ control hub included.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Team -->
+    <section class="trust-section">
+        <div class="container fade-up">
+            <h2>Tested by the Best.</h2>
+            <div class="trust-logos">
+                <div class="trust-logo">APPLE (Hardware R&D)</div>
+                <div class="trust-logo">NYU Robotics (PhD)</div>
+            </div>
+            <p class="trust-text">Built by Dr. Dongdong Liu, a former Apple Senior R&D Engineer and NYU Robotics PhD. We bring Silicon Valley's most advanced AI directly to America's manufacturing floor.</p>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer id="preorder" class="footer">
+        <div class="footer-blur"></div>
+        <div class="container footer-content fade-up">
+            <h2>Ready to transform your QA?</h2>
+            <p>Skip the $30k integrators. Get intelligent vision running today.</p>
+            <form class="lead-form" onsubmit="event.preventDefault(); alert('Lead captured! Turing Ops will contact you soon.');">
+                <input type="email" placeholder="Enter your work email" required class="input-field">
+                <button type="submit" class="btn btn-primary glow-effect">Get Deployment Guide &amp; Pricing</button>
+            </form>
+            <div class="footer-links">
+                <div class="logo"><span class="logo-accent">TURING</span> INSPECT</div>
+                <div class="copyright">&copy; 2026 Turing Inspect Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
