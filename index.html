@@ -45,11 +45,9 @@
                 <a href="#how-it-works" class="btn btn-secondary">Watch Demo</a>
             </div>
             
-            <!-- Hero Graphic (Mock hardware or scanning effect) -->
+            <!-- Hero Graphic -->
             <div class="hero-graphic fade-up delay-4">
-                <div class="camera-lens">
-                    <div class="lens-glow"></div>
-                </div>
+                <img src="hero.PNG" alt="Turing Inspect Industrial Smart Camera" class="hero-image">
             </div>
         </div>
     </section>
@@ -68,46 +66,8 @@
                     <div class="window-controls">
                         <span></span><span></span><span></span>
                     </div>
-                    <div class="window-title">Turing Console // Station 4</div>
-                </div>
-                
-                <div class="demo-body">
-                    <!-- Left: Camera Feed Mock -->
-                    <div class="camera-feed-container">
-                        <div class="camera-feed">
-                            <div class="scanline"></div>
-                            <!-- Mocking a part of a PCB/Machined part with CSS -->
-                            <div class="mock-part">
-                                <div class="component c1"></div>
-                                <div class="component c2"></div>
-                                <!-- The missing screw spot -->
-                                <div class="component c3 missing" id="inspect-target"></div>
-                            </div>
-                            <div class="bounding-box" id="bounding-box">
-                                <span>MISSING: RED SCREW</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right: Prompt CLI -->
-                    <div class="cli-container">
-                        <div class="cli-output" id="cli-output">
-                            <span class="system-msg">System initialized. Edge GPU (NVIDIA Orin NX) active.</span><br>
-                            <span class="system-msg">Camera: 12MP Global Shutter - Online.</span><br>
-                        </div>
-                        <div class="cli-input-line">
-                            <span class="prompt-char">&gt;</span>
-                            <span class="typing-text" id="typewriter"></span><span class="cursor">|</span>
-                        </div>
-                        <div class="status-panel mt-4 hidden" id="status-panel">
-                            <div class="status-indicator reject">INSPECTION FAILED (2.7s)</div>
-                            <div class="status-details">
-                                <p>Reason: Target "red screw" not detected at location (452, 110).</p>
-                                <p>Confidence: 99.8%</p>
-                                <p>I/O Trigger: PIN_4 (EJECT) set HIGH.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="demo-video-wrapper">
+                    <video src="demo.m4v" autoplay loop muted playsinline class="demo-video"></video>
                 </div>
             </div>
         </div>
@@ -162,6 +122,10 @@
                     <div class="badge">HARDCORE ENGINEERING</div>
                     <h2>Built for the Factory Floor.</h2>
                     <p>We packed massive computational power into an uncompromising industrial chassis. Waterproof, dustproof, and runs massive VLMs entirely offline.</p>
+                    
+                    <div style="margin-top: 48px;">
+                        <img src="industrial.png" alt="Turing Inspect Industrial Interface" style="width: 100%; max-width: 350px; border-radius: 12px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); border: 1px solid rgba(255,255,255,0.1);">
+                    </div>
                 </div>
                 
                 <div class="specs-grid fade-up delay-1">
