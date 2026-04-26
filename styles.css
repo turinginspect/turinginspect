@@ -211,10 +211,12 @@ h1, h2, h3, h4 {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: 160px 0 100px;
+    padding: 160px 0 0;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     overflow: hidden;
 }
 
@@ -327,24 +329,15 @@ section {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.window-controls {
-    display: flex;
-    gap: 8px;
-}
 
-.window-controls span {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: #ef4444;
-}
-.window-controls span:nth-child(2) { background: #f59e0b; }
-.window-controls span:nth-child(3) { background: #10b981; }
 
 .window-title {
-    margin-left: 20px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
+    letter-spacing: 0.05em;
+    width: 100%;
+    text-align: center;
 }
 
 .demo-body {
