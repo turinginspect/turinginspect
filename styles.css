@@ -794,6 +794,26 @@ section {
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
+/* Apple-style premium reveal animation */
+.apple-reveal {
+    opacity: 0;
+    animation: apple-reveal-anim 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.6s; /* Wait for title to mostly finish */
+}
+
+@keyframes apple-reveal-anim {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.9);
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
 .demo-video-wrapper {
     position: relative;
     width: 100%;
